@@ -24,23 +24,31 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
-      - name: Install dependencies
+      - name: Install npm dependencies
         run: npm ci
 
-      - name: Build CSS
+      - name: Build Tailwind CSS
         run: npm run build
 
-      - name: Prepare deployment
+      - name: Build Jekyll site
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      - name: Copy files to _site
         run: |
-          mkdir -p _site
-          cp src/index.html _site/
-          cp -r dist _site/
           cp CNAME _site/ 2>/dev/null || true
           cp .nojekyll _site/
 

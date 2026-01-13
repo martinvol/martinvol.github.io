@@ -1,0 +1,16 @@
+title: Martin Vol
+description: Personal website of Martin Vol - Developer, Creator, Builder
+url: "https://martinvol.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+exclude:
+  - node_modules
+  - package.json
+  - package-lock.json
+  - tailwind.config.js
+  - src
+  - README.md
+  - Gemfile
+  - Gemfile.lock
