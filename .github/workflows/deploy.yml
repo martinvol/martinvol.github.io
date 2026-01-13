@@ -36,13 +36,21 @@ jobs:
       - name: Build CSS
         run: npm run build
 
+      - name: Prepare deployment
+        run: |
+          mkdir -p _site
+          cp index.html _site/
+          cp -r dist _site/
+          cp CNAME _site/ 2>/dev/null || true
+          cp .nojekyll _site/
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: '_site'
 
       - name: Deploy to GitHub Pages
         id: deployment
