@@ -1,0 +1,16 @@
+{
+  "name": "martinvol-github-io",
+  "version": "1.0.0",
+  "description": "Personal website",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "npm run build:css"
+  },
+  "keywords": [],
+  "author": "Martin Vol",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
