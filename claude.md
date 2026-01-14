@@ -40,6 +40,12 @@ Personal website for Martin Volpe, built with Jekyll and Tailwind CSS, deployed 
 └── _config.yml        # Jekyll configuration
 ```
 
+### Internal Linking
+- **Always use `page_id` for internal links** - never hardcode URLs
+- Each page has a `page_id` in its front matter (e.g., `page_id: home`, `page_id: about`)
+- Look up pages dynamically using: `{% assign my_page = site.pages | where: "page_id", "page_name" | first %}`
+- Then use the URL: `{{ my_page.url | relative_url }}`
+
 ### Site Structure Preferences
 - **Header**: Horizontal navigation bar with links aligned to the right
 - **Navigation links**: Home, Blog (to martinvol.com)
