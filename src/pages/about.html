@@ -2,6 +2,8 @@
 layout: default
 title: About - Martín Volpe
 description: About Martín Volpe
+permalink: /about/
+page_id: about
 sitemap:
   changefreq: monthly
   priority: 0.5
@@ -24,8 +26,9 @@ sitemap:
                 </p>
             </div>
 
+            {% assign home_page = site.pages | where: "page_id", "home" | first %}
             <div class="pt-6">
-                <a href="{{ '/' | relative_url }}"
+                <a href="{{ home_page.url | relative_url }}"
                    class="inline-block text-gray-600 hover:text-gray-900 transition-colors">
                     ← Back to home
                 </a>

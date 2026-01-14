@@ -30,10 +30,13 @@ Personal website for Martin Volpe, built with Jekyll and Tailwind CSS, deployed 
 │   ├── header.html    # Navigation bar (Home, Blog links on right)
 │   └── footer.html    # Copyright notice
 ├── src/
-│   └── input.css      # Tailwind CSS source
+│   ├── input.css      # Tailwind CSS source
+│   └── pages/         # Jekyll pages (index, about, 404)
+│       ├── index.html
+│       ├── about.html
+│       └── 404.html
 ├── dist/              # Generated CSS (gitignored, built in CI)
 │   └── output.css
-├── index.html         # Home page (uses Jekyll frontmatter)
 └── _config.yml        # Jekyll configuration
 ```
 

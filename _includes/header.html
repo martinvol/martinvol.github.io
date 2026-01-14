@@ -1,13 +1,14 @@
 <header class="fixed top-0 left-0 right-0 z-50 bg-gray-50/80 backdrop-blur-sm">
     <nav class="max-w-6xl mx-auto px-8 py-6 flex justify-end">
         <div class="flex gap-12 text-sm font-medium">
-            {% assign current = page.url | downcase %}
-            <a href="{{ '/' | relative_url }}"
-               class="{% if current == '/' or current == '/index.html' %}text-gray-900{% else %}text-blue-600 hover:text-blue-800{% endif %} transition-colors">
+            {% assign home_page = site.pages | where: "page_id", "home" | first %}
+            {% assign about_page = site.pages | where: "page_id", "about" | first %}
+            <a href="{{ home_page.url | relative_url }}"
+               class="{% if page.page_id == 'home' %}text-gray-900{% else %}text-blue-600 hover:text-blue-800{% endif %} transition-colors">
                 Home
             </a>
-            <a href="{{ '/about.html' | relative_url }}"
-               class="{% if current == '/about.html' %}text-gray-900{% else %}text-blue-600 hover:text-blue-800{% endif %} transition-colors">
+            <a href="{{ about_page.url | relative_url }}"
+               class="{% if page.page_id == 'about' %}text-gray-900{% else %}text-blue-600 hover:text-blue-800{% endif %} transition-colors">
                 About
             </a>
             <a href="https://martinvol.com"

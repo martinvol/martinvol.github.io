@@ -12,7 +12,8 @@ permalink: /404.html
         <p class="text-lg text-gray-500 mb-12">
             The page you're looking for doesn't exist or has been moved.
         </p>
-        <a href="{{ '/' | relative_url }}"
+        {% assign home_page = site.pages | where: "page_id", "home" | first %}
+        <a href="{{ home_page.url | relative_url }}"
            class="inline-block px-8 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition-colors">
             Go Home
         </a>

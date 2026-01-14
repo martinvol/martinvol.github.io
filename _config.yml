@@ -16,7 +16,7 @@ exclude:
   - package.json
   - package-lock.json
   - tailwind.config.js
-  - src
+  - src/input.css
   - README.md
   - Gemfile
   - Gemfile.lock
