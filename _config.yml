@@ -5,6 +5,9 @@ baseurl: ""
 
 # Build settings
 markdown: kramdown
+plugins:
+  - jekyll-sitemap
+
 include:
   - dist
 exclude:
