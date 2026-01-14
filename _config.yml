@@ -5,6 +5,8 @@ baseurl: ""
 
 # Build settings
 markdown: kramdown
+include:
+  - dist
 exclude:
   - node_modules
   - package.json

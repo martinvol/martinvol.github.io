@@ -51,6 +51,8 @@ jobs:
         run: |
           cp CNAME _site/ 2>/dev/null || true
           cp .nojekyll _site/
+          cp favicon-*.png _site/ 2>/dev/null || true
+          cp apple-touch-icon.png _site/ 2>/dev/null || true
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
