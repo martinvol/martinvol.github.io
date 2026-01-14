@@ -1,4 +1,4 @@
-# Martin Volpe's Personal Website
+# Martín Volpe's Personal Website
 
 This is my personal website, built with Jekyll and Tailwind CSS, and deployed automatically via GitHub Actions.
 

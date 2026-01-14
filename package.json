@@ -10,7 +10,7 @@
     "dev": "concurrently \"npm run watch:css\" \"npm run serve\""
   },
   "keywords": [],
-  "author": "Martin Volpe",
+  "author": "Martín Volpe",
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^8.2.2",

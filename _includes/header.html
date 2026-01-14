@@ -1,11 +1,15 @@
-<header class="bg-white shadow-md">
-    <nav class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-        <div class="text-2xl font-bold text-gray-800">
-            <a href="{{ '/' | relative_url }}" class="hover:text-blue-500 transition-colors">Martin Volpe</a>
-        </div>
-        <div class="flex gap-6">
-            <a href="{{ '/' | relative_url }}" class="text-gray-700 hover:text-blue-500 transition-colors">Home</a>
-            <a href="https://martinvol.com" class="text-gray-700 hover:text-blue-500 transition-colors">Blog</a>
+<header class="fixed top-0 left-0 right-0 z-50 bg-gray-50/80 backdrop-blur-sm">
+    <nav class="max-w-6xl mx-auto px-8 py-6 flex justify-end">
+        <div class="flex gap-12 text-sm font-medium">
+            {% assign current = page.url | downcase %}
+            <a href="{{ '/' | relative_url }}"
+               class="{% if current == '/' or current == '/index.html' %}text-gray-900{% else %}text-blue-600 hover:text-blue-800{% endif %} transition-colors">
+                Home
+            </a>
+            <a href="https://martinvol.com"
+               class="text-blue-600 hover:text-blue-800 transition-colors">
+                Blog
+            </a>
         </div>
     </nav>
 </header>
