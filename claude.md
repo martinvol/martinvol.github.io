@@ -63,7 +63,7 @@ CI pipeline that:
 Configured to scan Jekyll layouts, includes, and posts for Tailwind classes.
 
 ### `_config.yml`
-Jekyll configuration excluding build artifacts (node_modules, src, etc.)
+Jekyll configuration excluding build artifacts (node_modules, src, etc.). Also contains sitemap defaults (changefreq, priority) for the jekyll-sitemap plugin which auto-generates sitemap.xml.
 
 ## GitHub Pages Setup
 

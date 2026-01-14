@@ -10,6 +10,7 @@ plugins:
 
 include:
   - dist
+
 exclude:
   - node_modules
   - package.json
