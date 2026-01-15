@@ -1,5 +1,6 @@
 node_modules/
 dist/
 _site/
+_data/assets.json
 .jekyll-cache/
 Gemfile.lock

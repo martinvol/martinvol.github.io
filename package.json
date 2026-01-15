@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Personal website",
   "scripts": {
-    "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "build:css": "node scripts/build-css.js",
     "watch:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
     "build": "npm run build:css",
     "serve": "bundle exec jekyll serve --livereload",
