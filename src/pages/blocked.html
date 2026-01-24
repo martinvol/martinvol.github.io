@@ -1,0 +1,41 @@
+---
+layout: base
+title: Blocked
+permalink: /blocked
+page_id: blocked
+sitemap: false
+---
+
+<div class="min-h-screen flex items-center justify-center px-6">
+    <div class="text-center">
+        <h1 class="text-6xl md:text-7xl font-bold tracking-tight">
+            Not now
+        </h1>
+        <p id="visit-count" class="text-2xl text-gray-500 mt-6">
+            Loading...
+        </p>
+    </div>
+</div>
+
+<script>
+(function() {
+    const today = new Date().toISOString().split('T')[0];
+    const storageKey = 'blocked_visits';
+
+    let data = JSON.parse(localStorage.getItem(storageKey) || '{}');
+
+    if (data.date !== today) {
+        data = { date: today, count: 0 };
+    }
+
+    data.count++;
+    localStorage.setItem(storageKey, JSON.stringify(data));
+
+    const countEl = document.getElementById('visit-count');
+    if (data.count === 1) {
+        countEl.textContent = 'Visited 1 time today';
+    } else {
+        countEl.textContent = 'Visited ' + data.count + ' times today';
+    }
+})();
+</script>
