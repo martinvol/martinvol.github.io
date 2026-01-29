@@ -46,6 +46,11 @@ Personal website for Martin Volpe, built with Jekyll and Tailwind CSS, deployed 
 - Look up pages dynamically using: `{% assign my_page = site.pages | where: "page_id", "page_name" | first %}`
 - Then use the URL: `{{ my_page.url | relative_url }}`
 
+### Permalinks
+- **Always use trailing slashes in permalinks** (e.g., `permalink: /about/` not `permalink: /about`)
+- Trailing slashes create directory structures (`about/index.html`) which provide consistent URL behavior
+- Without trailing slashes, URLs won't redirect properly and may cause inconsistent navigation
+
 ### Site Structure Preferences
 - **Header**: Horizontal navigation bar with links aligned to the right
 - **Navigation links**: Home, Blog (to martinvol.com)
