@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script>
-    (function() {
-        var p = window.location.pathname;
-        if (p.slice(-1) === '/') return;
-        if (/\.[a-zA-Z0-9]+$/.test(p)) return;
-        window.location.replace(p + '/' + window.location.search + window.location.hash);
-    })();
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ page.description | default: site.description }}">
