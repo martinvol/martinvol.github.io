@@ -5,7 +5,12 @@ layout: null
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   {% for page in site.pages %}{% if page.sitemap != false and page.url != '/sitemap.xml' and page.url != '/404.html' and page.url != '/robots.txt' %}
   <url>
-    <loc>{{ site.url }}{{ page.url | remove: 'index.html' }}</loc>
+    {%- assign page_path = page.url | remove: 'index.html' -%}
+    {%- assign last_char = page_path | slice: -1, 1 -%}
+    {%- unless last_char == '/' -%}
+      {%- assign page_path = page_path | append: '/' -%}
+    {%- endunless -%}
+    <loc>{{ site.url }}{{ page_path }}</loc>
     {% if page.sitemap.changefreq %}<changefreq>{{ page.sitemap.changefreq }}</changefreq>{% endif %}
     {% if page.sitemap.priority %}<priority>{{ page.sitemap.priority }}</priority>{% endif %}
   </url>

@@ -4,6 +4,7 @@ url: "https://martinvol.pe"
 baseurl: ""
 
 # Build settings
+permalink: pretty
 markdown: kramdown
 plugins:
   - jekyll-sitemap
